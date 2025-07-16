@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { Star, MapPin, Users, Wifi, Car, Coffee } from 'lucide-react'
 import { trackRoomView } from '@/lib/gtm'
+import { openWhatsApp, getBookingMessage } from '@/lib/whatsapp'
 
 interface RoomCardProps {
   id: string
@@ -87,18 +88,7 @@ export default function PropertyCard({
           className="block w-full bg-primary-600 text-white text-center py-3 rounded-lg hover:bg-primary-700 transition-colors font-medium"
           onClick={() => {
             handleRoomView()
-            // Scroll to booking section for room details
-            setTimeout(() => {
-              const bookingSection = document.getElementById('booking')
-              if (bookingSection) {
-                const headerHeight = 120
-                const elementPosition = bookingSection.offsetTop - headerHeight
-                window.scrollTo({
-                  top: elementPosition,
-                  behavior: 'smooth'
-                })
-              }
-            }, 100)
+            openWhatsApp('03373338726', `Hello! I'm interested in the ${title} at Decent Luxury Hotel Skardu. Could you please provide me with more information about availability and rates?`)
           }}
         >
           View Details

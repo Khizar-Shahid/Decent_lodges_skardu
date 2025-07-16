@@ -6,6 +6,7 @@ import Hero from '@/components/Hero'
 import PropertyCard from '@/components/PropertyCard'
 import Gallery from '@/components/Gallery'
 import { Shield, Clock, Heart, Award, Wifi, Car, Coffee, Bed, Phone, Mail, MapPin } from 'lucide-react'
+import { openWhatsApp, getBookingMessage } from '@/lib/whatsapp'
 
 // Room data with Skardu images
 const rooms = [
@@ -289,54 +290,17 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white rounded-lg p-8 text-gray-800">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Check-in Date
-                  </label>
-                  <input
-                    type="date"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Check-out Date
-                  </label>
-                  <input
-                    type="date"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Number of Guests
-                  </label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    <option>1 Guest</option>
-                    <option>2 Guests</option>
-                    <option>3 Guests</option>
-                    <option>4+ Guests</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Room Type
-                  </label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    <option>Master Single</option>
-                    <option>Master Double</option>
-                    <option>Deluxe Room</option>
-                  </select>
-                </div>
-              </div>
-              <div className="mt-6">
-                <button className="w-full bg-primary-600 text-white py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors font-medium">
-                  Book Now
-                </button>
-              </div>
+          <div className="max-w-md mx-auto">
+            <div className="bg-white rounded-lg p-8 text-gray-800 text-center">
+              <p className="text-lg text-gray-700 mb-6">
+                Ready to book your stay? Contact us directly on WhatsApp for instant booking assistance.
+              </p>
+              <button 
+                onClick={() => openWhatsApp('03373338726', getBookingMessage())}
+                className="w-full bg-primary-600 text-white py-4 px-8 rounded-lg hover:bg-primary-700 transition-colors font-medium text-lg"
+              >
+                Book Now on WhatsApp
+              </button>
             </div>
           </div>
         </div>

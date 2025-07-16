@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Calendar, Users, MapPin, Search, Clock, Shield, Wifi, Car, Plane } from 'lucide-react'
 import { trackBooking, trackContact } from '@/lib/gtm'
+import { openWhatsApp, getBookingMessage } from '@/lib/whatsapp'
 
 export default function Hero() {
   const [checkIn, setCheckIn] = useState('')
@@ -11,10 +12,23 @@ export default function Hero() {
 
   const handleBookStay = () => {
     trackBooking('hero_section', 0)
+    openWhatsApp('03373338726', getBookingMessage())
   }
 
   const handleViewRooms = () => {
     trackContact('view_rooms')
+    // Scroll to rooms section
+    setTimeout(() => {
+      const roomsSection = document.getElementById('rooms')
+      if (roomsSection) {
+        const headerHeight = 120
+        const elementPosition = roomsSection.offsetTop - headerHeight
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        })
+      }
+    }, 100)
   }
 
   return (
