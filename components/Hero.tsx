@@ -2,11 +2,20 @@
 
 import { useState } from 'react'
 import { Calendar, Users, MapPin, Search, Clock, Shield, Wifi, Car, Plane } from 'lucide-react'
+import { trackBooking, trackContact } from '@/lib/gtm'
 
 export default function Hero() {
   const [checkIn, setCheckIn] = useState('')
   const [checkOut, setCheckOut] = useState('')
   const [guests, setGuests] = useState('2')
+
+  const handleBookStay = () => {
+    trackBooking('hero_section', 0)
+  }
+
+  const handleViewRooms = () => {
+    trackContact('view_rooms')
+  }
 
   return (
     <section className="bg-blue-50 min-h-screen flex items-center justify-center py-16">
@@ -26,11 +35,17 @@ export default function Hero() {
         
         {/* Call-to-Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center space-x-2">
+          <button 
+            className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center space-x-2"
+            onClick={handleBookStay}
+          >
             <Plane className="w-5 h-5" />
             <span>Book Your Stay</span>
           </button>
-          <button className="bg-white text-gray-700 px-8 py-4 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors font-semibold">
+          <button 
+            className="bg-white text-gray-700 px-8 py-4 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors font-semibold"
+            onClick={handleViewRooms}
+          >
             View Rooms
           </button>
         </div>

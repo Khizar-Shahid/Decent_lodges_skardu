@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Star, MapPin, Users, Wifi, Car, Coffee } from 'lucide-react'
+import { trackRoomView } from '@/lib/gtm'
 
 interface RoomCardProps {
   id: string
@@ -25,6 +26,10 @@ export default function PropertyCard({
   amenities,
   description
 }: RoomCardProps) {
+  const handleRoomView = () => {
+    trackRoomView(title)
+  }
+
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
       {/* Image */}
@@ -82,6 +87,7 @@ export default function PropertyCard({
         <Link
           href={`/rooms/${id}`}
           className="block w-full bg-primary-600 text-white text-center py-3 rounded-lg hover:bg-primary-700 transition-colors font-medium"
+          onClick={handleRoomView}
         >
           View Details
         </Link>
