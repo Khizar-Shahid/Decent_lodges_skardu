@@ -13,7 +13,7 @@ const rooms = [
     location: 'ShangriLa Road, Murtazabad, Skardu',
     price: 150,
     rating: 4.8,
-    image: '/scardu2.jpg',
+    image: '/Scardu2.jpg',
     amenities: ['WiFi', 'Parking', 'Breakfast', 'AC'],
     description: 'Comfortable master bedroom with single bed, perfect for solo travelers.'
   },
@@ -23,7 +23,7 @@ const rooms = [
     location: 'ShangriLa Road, Murtazabad, Skardu',
     price: 180,
     rating: 4.6,
-    image: '/scardu3.jpg',
+    image: '/Scardu3.jpg',
     amenities: ['WiFi', 'Parking', 'Breakfast', 'AC'],
     description: 'Spacious master bedroom with double bed, ideal for couples.'
   },
@@ -224,7 +224,7 @@ export default function Home() {
             </div>
             <div className="relative h-96 rounded-lg overflow-hidden">
               <img
-                src="/scardu5.jpg"
+                src="/Scardu5.jpg"
                 alt="Decent Luxury Hotel in Skardu"
                 className="w-full h-full object-cover"
               />

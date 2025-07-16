@@ -8,7 +8,7 @@ const galleryImages = [
   { src: '/scardu7.jpg', alt: 'Skardu Valley View 2' },
   { src: '/scardu8.jpg', alt: 'Skardu Valley View 3' },
   { src: '/scardu9.jpg', alt: 'Skardu Valley View 4' },
-  { src: '/scardu10.jpg', alt: 'Skardu Valley View 5' },
+  { src: '/Scardu10.jpg', alt: 'Skardu Valley View 5' },
 ]
 
 export default function Gallery() {
