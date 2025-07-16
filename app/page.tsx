@@ -1,9 +1,11 @@
+'use client'
+
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import PropertyCard from '@/components/PropertyCard'
 import Gallery from '@/components/Gallery'
-import { Shield, Clock, Heart, Award, Wifi, Car, Coffee, Bed } from 'lucide-react'
+import { Shield, Clock, Heart, Award, Wifi, Car, Coffee, Bed, Phone, Mail, MapPin } from 'lucide-react'
 
 // Room data with Skardu images
 const rooms = [
@@ -89,7 +91,11 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
-      <Hero />
+      
+      {/* Home Section */}
+      <section id="home">
+        <Hero />
+      </section>
       
       {/* Features Section */}
       <section className="py-16 bg-gray-50">
@@ -122,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* Amenities Section */}
-      <section className="py-16">
+      <section id="amenities" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -152,7 +158,7 @@ export default function Home() {
       </section>
 
       {/* Rooms Section */}
-      <section className="py-16 bg-gray-50">
+      <section id="rooms" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -170,12 +176,12 @@ export default function Home() {
           </div>
           
           <div className="text-center mt-12">
-            <a
-              href="/rooms"
+            <button 
+              onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-block bg-primary-600 text-white px-8 py-3 rounded-lg hover:bg-primary-700 transition-colors font-medium"
             >
               View All Rooms
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -215,12 +221,12 @@ export default function Home() {
                   <p className="text-sm text-gray-300">Master Double</p>
                 </div>
               </div>
-              <a
-                href="/about"
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-block bg-primary-600 text-white px-8 py-3 rounded-lg hover:bg-primary-700 transition-colors font-medium"
               >
                 Learn More
-              </a>
+              </button>
             </div>
             <div className="relative h-96 rounded-lg overflow-hidden">
               <img
@@ -228,6 +234,109 @@ export default function Home() {
                 alt="Decent Luxury Hotel in Skardu"
                 className="w-full h-full object-cover"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Contact Us
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Get in touch with us for bookings and inquiries.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Phone className="w-8 h-8 text-primary-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Phone</h3>
+              <p className="text-gray-600">03343338726</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Mail className="w-8 h-8 text-primary-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Email</h3>
+              <p className="text-gray-600">shoaibhaider81@gmail.com</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MapPin className="w-8 h-8 text-primary-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Address</h3>
+              <p className="text-gray-600">ShangriLa Road, Murtazabad, Skardu</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Booking Section */}
+      <section id="booking" className="py-16 bg-primary-600 text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Book Your Stay
+            </h2>
+            <p className="text-lg max-w-2xl mx-auto">
+              Reserve your room at Decent Luxury Hotel for an unforgettable experience in Skardu.
+            </p>
+          </div>
+          
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-white rounded-lg p-8 text-gray-800">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Check-in Date
+                  </label>
+                  <input
+                    type="date"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Check-out Date
+                  </label>
+                  <input
+                    type="date"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Number of Guests
+                  </label>
+                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    <option>1 Guest</option>
+                    <option>2 Guests</option>
+                    <option>3 Guests</option>
+                    <option>4+ Guests</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Room Type
+                  </label>
+                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    <option>Master Single</option>
+                    <option>Master Double</option>
+                    <option>Deluxe Room</option>
+                  </select>
+                </div>
+              </div>
+              <div className="mt-6">
+                <button className="w-full bg-primary-600 text-white py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors font-medium">
+                  Book Now
+                </button>
+              </div>
             </div>
           </div>
         </div>

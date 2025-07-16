@@ -5,16 +5,6 @@ import Script from 'next/script'
 export default function GoogleTagManager() {
   return (
     <>
-      {/* Google Tag Manager (noscript) */}
-      <noscript>
-        <iframe 
-          src="https://www.googletagmanager.com/ns.html?id=GTM-MXKF352W"
-          height="0" 
-          width="0" 
-          style={{ display: 'none', visibility: 'hidden' }}
-        />
-      </noscript>
-      
       {/* Google Tag Manager */}
       <Script
         id="gtm"
@@ -29,6 +19,22 @@ export default function GoogleTagManager() {
           `,
         }}
       />
+    </>
+  )
+}
+
+export function GoogleTagManagerNoScript() {
+  return (
+    <>
+      {/* Google Tag Manager (noscript) */}
+      <noscript>
+        <iframe 
+          src="https://www.googletagmanager.com/ns.html?id=GTM-MXKF352W"
+          height="0" 
+          width="0" 
+          style={{ display: 'none', visibility: 'hidden' }}
+        />
+      </noscript>
     </>
   )
 } 

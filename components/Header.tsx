@@ -1,11 +1,35 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import { Menu, X, Phone, Mail } from 'lucide-react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const scrollToSection = (sectionId: string) => {
+    // Add a small delay to ensure the page is fully loaded
+    setTimeout(() => {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        // Calculate offset for the fixed header
+        const headerHeight = 120 // Approximate header height
+        const elementPosition = element.offsetTop - headerHeight
+        
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        })
+      } else {
+        console.log(`Section with id "${sectionId}" not found`)
+        // Fallback: scroll to top if section not found
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        })
+      }
+    }, 100)
+    setIsMenuOpen(false)
+  }
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
@@ -32,7 +56,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 cursor-pointer" onClick={() => scrollToSection('home')}>
             <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">D</span>
             </div>
@@ -40,28 +64,40 @@ export default function Header() {
               <h1 className="text-xl font-bold text-gray-900">Decent Luxury Hotel</h1>
               <p className="text-sm text-gray-600">Premium Accommodation</p>
             </div>
-          </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-primary-600 font-medium">
+            <button 
+              onClick={() => scrollToSection('home')}
+              className="text-gray-700 hover:text-primary-600 font-medium cursor-pointer"
+            >
               Home
-            </Link>
-            <Link href="/rooms" className="text-gray-700 hover:text-primary-600 font-medium">
+            </button>
+            <button 
+              onClick={() => scrollToSection('rooms')}
+              className="text-gray-700 hover:text-primary-600 font-medium cursor-pointer"
+            >
               Rooms
-            </Link>
-            <Link href="/amenities" className="text-gray-700 hover:text-primary-600 font-medium">
+            </button>
+            <button 
+              onClick={() => scrollToSection('amenities')}
+              className="text-gray-700 hover:text-primary-600 font-medium cursor-pointer"
+            >
               Amenities
-            </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-primary-600 font-medium">
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="text-gray-700 hover:text-primary-600 font-medium cursor-pointer"
+            >
               Contact
-            </Link>
-            <Link 
-              href="/booking" 
-              className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors"
+            </button>
+            <button 
+              onClick={() => scrollToSection('booking')}
+              className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors cursor-pointer"
             >
               Book Now
-            </Link>
+            </button>
           </nav>
 
           {/* Mobile menu button */}
@@ -81,41 +117,36 @@ export default function Header() {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-gray-200">
             <div className="flex flex-col space-y-4 pt-4">
-              <Link 
-                href="/" 
-                className="text-gray-700 hover:text-primary-600 font-medium"
-                onClick={() => setIsMenuOpen(false)}
+              <button 
+                onClick={() => scrollToSection('home')}
+                className="text-gray-700 hover:text-primary-600 font-medium text-left"
               >
                 Home
-              </Link>
-              <Link 
-                href="/rooms" 
-                className="text-gray-700 hover:text-primary-600 font-medium"
-                onClick={() => setIsMenuOpen(false)}
+              </button>
+              <button 
+                onClick={() => scrollToSection('rooms')}
+                className="text-gray-700 hover:text-primary-600 font-medium text-left"
               >
                 Rooms
-              </Link>
-              <Link 
-                href="/amenities" 
-                className="text-gray-700 hover:text-primary-600 font-medium"
-                onClick={() => setIsMenuOpen(false)}
+              </button>
+              <button 
+                onClick={() => scrollToSection('amenities')}
+                className="text-gray-700 hover:text-primary-600 font-medium text-left"
               >
                 Amenities
-              </Link>
-              <Link 
-                href="/contact" 
-                className="text-gray-700 hover:text-primary-600 font-medium"
-                onClick={() => setIsMenuOpen(false)}
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="text-gray-700 hover:text-primary-600 font-medium text-left"
               >
                 Contact
-              </Link>
-              <Link 
-                href="/booking" 
+              </button>
+              <button 
+                onClick={() => scrollToSection('booking')}
                 className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors text-center"
-                onClick={() => setIsMenuOpen(false)}
               >
                 Book Now
-              </Link>
+              </button>
             </div>
           </nav>
         )}

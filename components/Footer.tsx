@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react'
 
 export default function Footer() {
@@ -42,29 +41,94 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+                <button 
+                  onClick={() => {
+                    const homeSection = document.getElementById('home')
+                    if (homeSection) {
+                      const headerHeight = 120
+                      const elementPosition = homeSection.offsetTop - headerHeight
+                      window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth'
+                      })
+                    }
+                  }}
+                  className="text-gray-300 hover:text-white transition-colors cursor-pointer"
+                >
                   Home
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/rooms" className="text-gray-300 hover:text-white transition-colors">
+                <button 
+                  onClick={() => {
+                    const roomsSection = document.getElementById('rooms')
+                    if (roomsSection) {
+                      const headerHeight = 120
+                      const elementPosition = roomsSection.offsetTop - headerHeight
+                      window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth'
+                      })
+                    }
+                  }}
+                  className="text-gray-300 hover:text-white transition-colors cursor-pointer"
+                >
                   Rooms
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/amenities" className="text-gray-300 hover:text-white transition-colors">
+                <button 
+                  onClick={() => {
+                    const amenitiesSection = document.getElementById('amenities')
+                    if (amenitiesSection) {
+                      const headerHeight = 120
+                      const elementPosition = amenitiesSection.offsetTop - headerHeight
+                      window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth'
+                      })
+                    }
+                  }}
+                  className="text-gray-300 hover:text-white transition-colors cursor-pointer"
+                >
                   Amenities
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+                <button 
+                  onClick={() => {
+                    const contactSection = document.getElementById('contact')
+                    if (contactSection) {
+                      const headerHeight = 120
+                      const elementPosition = contactSection.offsetTop - headerHeight
+                      window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth'
+                      })
+                    }
+                  }}
+                  className="text-gray-300 hover:text-white transition-colors cursor-pointer"
+                >
                   Contact
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/booking" className="text-gray-300 hover:text-white transition-colors">
+                <button 
+                  onClick={() => {
+                    const bookingSection = document.getElementById('booking')
+                    if (bookingSection) {
+                      const headerHeight = 120
+                      const elementPosition = bookingSection.offsetTop - headerHeight
+                      window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth'
+                      })
+                    }
+                  }}
+                  className="text-gray-300 hover:text-white transition-colors cursor-pointer"
+                >
                   Book Now
-                </Link>
+                </button>
               </li>
             </ul>
           </div>

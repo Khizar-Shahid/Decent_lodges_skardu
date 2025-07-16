@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import { Star, MapPin, Users, Wifi, Car, Coffee } from 'lucide-react'
 import { trackRoomView } from '@/lib/gtm'
 
@@ -84,13 +83,26 @@ export default function PropertyCard({
         </div>
 
         {/* Action Button */}
-        <Link
-          href={`/rooms/${id}`}
+        <button
           className="block w-full bg-primary-600 text-white text-center py-3 rounded-lg hover:bg-primary-700 transition-colors font-medium"
-          onClick={handleRoomView}
+          onClick={() => {
+            handleRoomView()
+            // Scroll to booking section for room details
+            setTimeout(() => {
+              const bookingSection = document.getElementById('booking')
+              if (bookingSection) {
+                const headerHeight = 120
+                const elementPosition = bookingSection.offsetTop - headerHeight
+                window.scrollTo({
+                  top: elementPosition,
+                  behavior: 'smooth'
+                })
+              }
+            }, 100)
+          }}
         >
           View Details
-        </Link>
+        </button>
       </div>
     </div>
   )
