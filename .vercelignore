@@ -1,0 +1,27 @@
+# Exclude files that might cause stack overflow during build
+node_modules
+.git
+.next
+.env
+.env.local
+.env.production.local
+.env.development.local
+
+# Exclude large files and directories
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Exclude development files
+.DS_Store
+*.pem
+.vercel
+
+# Exclude test files
+coverage
+.nyc_output
+
+# Exclude cache directories
+.cache
+.parcel-cache 
