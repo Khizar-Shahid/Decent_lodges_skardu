@@ -12,7 +12,7 @@ export default function Hero() {
 
   const handleBookStay = () => {
     trackBooking('hero_section', 0)
-    openWhatsApp('03373338726', getBookingMessage())
+    openWhatsApp('03083338726', getBookingMessage())
   }
 
   const handleViewRooms = () => {

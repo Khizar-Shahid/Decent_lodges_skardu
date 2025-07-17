@@ -88,7 +88,7 @@ export default function PropertyCard({
           className="block w-full bg-primary-600 text-white text-center py-3 rounded-lg hover:bg-primary-700 transition-colors font-medium"
           onClick={() => {
             handleRoomView()
-            openWhatsApp('03373338726', `Hello! I'm interested in the ${title} at Decent Luxury Hotel Skardu. Could you please provide me with more information about availability and rates?`)
+            openWhatsApp('03083338726', `Hello! I'm interested in the ${title} at Decent Luxury Hotel Skardu. Could you please provide me with more information about availability and rates?`)
           }}
         >
           View Details

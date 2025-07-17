@@ -258,7 +258,10 @@ export default function Home() {
                 <Phone className="w-8 h-8 text-primary-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Phone</h3>
-              <p className="text-gray-600">03343338726</p>
+              <p className="text-gray-600">
+                <div>03343338726</div>
+                <div>03083338726</div>
+              </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -296,7 +299,7 @@ export default function Home() {
                 Ready to book your stay? Contact us directly on WhatsApp for instant booking assistance.
               </p>
               <button 
-                onClick={() => openWhatsApp('03373338726', getBookingMessage())}
+                onClick={() => openWhatsApp('03083338726', getBookingMessage())}
                 className="w-full bg-primary-600 text-white py-4 px-8 rounded-lg hover:bg-primary-700 transition-colors font-medium text-lg"
               >
                 Book Now on WhatsApp
