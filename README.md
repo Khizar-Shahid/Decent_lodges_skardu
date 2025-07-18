@@ -16,7 +16,7 @@ A modern, responsive website for Decent Luxury Hotel, a premium accommodation bu
 - **Name**: Decent Luxury Hotel
 - **Location**: ShangriLa Road, Murtazabad, Skardu, Pakistan
 - **Owner**: Shoaib Haider
-- **Contact**: 03343338726
+- **Contact**: 03083338726
 - **Email**: shoaibhaider81@gmail.com
 - **Rooms**: 8 total rooms (3 Master Single + 5 Master Double)
 - **Check-in**: 12 PM (Flexible)
@@ -173,7 +173,7 @@ Create a `.env.local` file for environment variables:
 ```env
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
 NEXT_PUBLIC_CONTACT_EMAIL=shoaibhaider81@gmail.com
-NEXT_PUBLIC_CONTACT_PHONE=03343338726
+NEXT_PUBLIC_CONTACT_PHONE=03083338726
 ```
 
 ## Contributing
@@ -193,7 +193,7 @@ This project is licensed under the MIT License.
 For support or questions, please contact:
 - **Owner**: Shoaib Haider
 - **Email**: shoaibhaider81@gmail.com
-- **Phone**: 03343338726
+- **Phone**: 03083338726
 - **Address**: ShangriLa Road, Murtazabad, Skardu, Pakistan
 
 ---

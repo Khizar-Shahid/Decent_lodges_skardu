@@ -259,7 +259,6 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Phone</h3>
               <p className="text-gray-600">
-                <div>03343338726</div>
                 <div>03083338726</div>
               </p>
             </div>

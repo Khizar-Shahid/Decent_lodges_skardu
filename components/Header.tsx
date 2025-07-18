@@ -40,7 +40,6 @@ export default function Header() {
             <div className="flex items-center space-x-2">
                               <Phone className="w-4 h-4" />
                 <div>
-                  <div>03343338726</div>
                   <div>03083338726</div>
                 </div>
             </div>
